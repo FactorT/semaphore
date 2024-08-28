@@ -105,7 +105,6 @@ func (t *AnsibleApp) installGalaxyRequirementsFile(requirementsType string, requ
 		paramsGalaxy := []string{
 			requirementsType,
 			"install",
-			"--ignore-certs",
 			"-r",
 			requirementsFilePath,
 		}
