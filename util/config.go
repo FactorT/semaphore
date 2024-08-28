@@ -188,7 +188,7 @@ type ConfigType struct {
 	NonAdminCanCreateProject bool `json:"non_admin_can_create_project" env:"SEMAPHORE_NON_ADMIN_CAN_CREATE_PROJECT"`
 
 	// import requirements with force or not
-	ForceRequirements bool `json:"force_requirements" default:"true" env:"SEMAPHORE_FORCE_REQUIREMENTS"`
+	ForceRequirements bool `json:"force_requirements" env:"SEMAPHORE_FORCE_REQUIREMENTS"`
 
 	UseRemoteRunner bool `json:"use_remote_runner" env:"SEMAPHORE_USE_REMOTE_RUNNER"`
 

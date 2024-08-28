@@ -102,20 +102,19 @@ func (t *AnsibleApp) installGalaxyRequirementsFile(requirementsType string, requ
 
 	if hasRequirementsChanges(requirementsFilePath, requirementsHashFilePath) {
 
-		var forcerequirements string
-		if util.Config.ForceRequirements {
-			forcerequirements = "--force"
-		} else {
-			forcerequirements = ""
-		}
-
-		if err := t.runGalaxy([]string{
+		paramsGalaxy := []string{
 			requirementsType,
 			"install",
+			"--ignore-certs",
 			"-r",
 			requirementsFilePath,
-			forcerequirements,
-		}); err != nil {
+		}
+
+		if util.Config.ForceRequirements {
+			paramsGalaxy = append(paramsGalaxy, "--force")
+		}
+
+		if err := t.runGalaxy(paramsGalaxy); err != nil {
 			return err
 		}
 		if err := writeMD5Hash(requirementsFilePath, requirementsHashFilePath); err != nil {
