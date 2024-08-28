@@ -187,8 +187,8 @@ type ConfigType struct {
 	PasswordLoginDisable     bool `json:"password_login_disable" env:"SEMAPHORE_PASSWORD_LOGIN_DISABLED"`
 	NonAdminCanCreateProject bool `json:"non_admin_can_create_project" env:"SEMAPHORE_NON_ADMIN_CAN_CREATE_PROJECT"`
 
-	// import requirements
-	ForceRequirements bool `json:"force_requirements" default:true env:"SEMAPHORE_FORCE_REQUIREMENTS`
+	// import requirements with force or not
+	ForceRequirements bool `json:"force_requirements" default:"true" env:"SEMAPHORE_FORCE_REQUIREMENTS"`
 
 	UseRemoteRunner bool `json:"use_remote_runner" env:"SEMAPHORE_USE_REMOTE_RUNNER"`
 
